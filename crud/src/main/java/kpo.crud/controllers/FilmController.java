@@ -39,7 +39,7 @@ public class FilmController {
     /**
      * 2. Получение списка расписания.
      */
-    @GetMapping("/{date}")
+    @GetMapping("/showtimes/{date}")
     public ResponseEntity<StringBuilder> getAllShowtimes(@PathVariable Integer date) {
         StringBuilder response = new StringBuilder();
         for (Film film: service.getAll()) {
@@ -60,7 +60,7 @@ public class FilmController {
     /**
      * 3. Получение списка билетов.
      */
-    @GetMapping("/{date}")
+    @GetMapping("/tickets/{date}")
     public ResponseEntity<StringBuilder> getAllTickets(@PathVariable Integer date) {
         StringBuilder response = new StringBuilder();
         for (Film film: service.getAll()) {
@@ -80,7 +80,7 @@ public class FilmController {
     /**
      * 4. Удаление фильма по id.
      */
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/films/{id}")
     public ResponseEntity<String> deleteWorkoutById(@PathVariable Integer id) {
         return service.delete(id);
     }
